@@ -1,2 +1,2 @@
 # mashMash
- Sandbox fro imagination et al. 
+ Sandbox for imagination et al. 

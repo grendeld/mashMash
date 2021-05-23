@@ -1,0 +1,63 @@
+/*initial styles + styling for a 3d emerging shere effect */
+:root {
+  --clr-bG: linear-gradient(to bottom right, #0F2027, #203A43);
+  --clr-sphr: linear-gradient(91.8deg, #1a2a6c, #b21f1f 70%, #fdbb2d);
+}
+
+/* FONTS */
+@font-face {
+  font-family: bauhaus;
+  src: url('assets/BauhausSketch-K1j7.ttf')
+}
+
+html {
+  background-image: var(--clr-bG);
+  margin: 0;
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+}
+
+
+/* SPHERES */
+#spheres {
+  position: absolute;
+  z-index: 1;
+  background-image: var(--clr-sphr);
+  height: 100vh;
+  width: 100vw;
+  animation: makeSphere 1s ease-in alternate 3s infinite;
+  transition: transform 6s;
+  transform: translate(10%,10%) scale(0.5);
+}
+
+@keyframes makeSphere {
+  0% {}
+
+  100% {border-radius: 100% 100% 100% 100%; transform:rotate3d(100,20,30,60deg)}
+}
+
+/* TEXT */
+#matrixText{
+  position: absolute;
+  font-size: 10em;
+  text-align: center;
+  background: linear-gradient(to bottom right, rgba(10,170,70,0.7),black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: bauhaus;
+  animation: scrolling 60s linear infinite;
+}
+
+@keyframes scrolling {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
